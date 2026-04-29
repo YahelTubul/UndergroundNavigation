@@ -18,6 +18,15 @@ bool Graph::findNode(int id) const{
     return nodesList.find(id) != nodesList.end();
 }
 
+std::vector<Edge>Graph::getNeighbours(int id) const {
+    //search the node in the neighbour list
+    auto it = neighbourList.find(id);
+    // if not found return empty vector
+    if (it == neighbourList.end())
+        return {};
+    //return the edges the get out from the node
+    return it->second;
+}
 
 
 
