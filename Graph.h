@@ -4,5 +4,12 @@
 
 #ifndef UNDERGROUNDNAVIGATION_GRAPH_H
 #define UNDERGROUNDNAVIGATION_GRAPH_H
+#include <vector>
+#include <unordered_map>
 
+// This class represent the underground environment computationally
+class Graph {
+    private:
+
+};
 #endif //UNDERGROUNDNAVIGATION_GRAPH_H
