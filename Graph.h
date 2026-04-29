@@ -15,7 +15,7 @@ private:
         std::unordered_map<int, Node> nodesList; // save all nodes in the graph
         std::unordered_map<int, std::vector<Edge>> neighbourList; // save the neighbour of each node
 public:
-        void addNode(int id, int x, int y);
+        void addNode(int id, float x, float y, float z);
 
 
 
