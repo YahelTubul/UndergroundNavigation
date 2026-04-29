@@ -14,9 +14,11 @@ void Graph::addEdge(int from, int dest, double weight) {
     neighbourList[dest].push_back({from, weight, false});
 }
 //check if there is node with same id
-bool Graph::findNode(int id) {
+bool Graph::findNode(int id) const{
     return nodesList.find(id) != nodesList.end();
 }
+
+
 
 
 
