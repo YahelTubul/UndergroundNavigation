@@ -20,6 +20,8 @@ public:
         bool findNode(int id) const;
         std::vector<Edge> getNeighbours(int id) const;
         void block(int from, int dest);
+        void unblock(int from, int dest);
+
 
 
 

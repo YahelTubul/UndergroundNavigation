@@ -41,8 +41,8 @@ void Graph::block(int from, int dest) {
             // sign the edge as blocked
             edge.isBlocked = true;
     }
-
 }
+
 
 
 
