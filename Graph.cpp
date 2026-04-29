@@ -27,7 +27,7 @@ std::vector<Edge>Graph::getNeighbours(int id) const {
     //return the edges the get out from the node
     return it->second;
 }
-
+// block edge between 2 nodes
 void Graph::block(int from, int dest) {
     // pass on each edge that get out from the node
     for (Edge& edge : neighbourList[from]) {
@@ -42,8 +42,21 @@ void Graph::block(int from, int dest) {
             edge.isBlocked = true;
     }
 }
-
-
+// remove the block from specific edge
+void Graph::unblock(int from, int dest) {
+    // pass on each edge that get out from the node
+    for (Edge& edge : neighbourList[from]) {
+        if (edge.neighbour == dest)
+            // sign the edge as unblock
+            edge.isBlocked = false;
+    }
+    // pass on each edge that get out from the second side
+    for (Edge& edge : neighbourList[dest]) {
+        if (edge.neighbour == from)
+            // sign the edge as unblock
+            edge.isBlocked = false;
+    }
+}
 
 
 
