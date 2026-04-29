@@ -57,8 +57,21 @@ void Graph::unblock(int from, int dest) {
             edge.isBlocked = false;
     }
 }
+// this function check if edge is blocked
+bool Graph::isBlocked(int from, int dest) const {
+    auto it = neighbourList.find(dest);
+    // if not found node, the edge is blocked
+    if (it == neighbourList.end())
+        return true;
+    // found the edge
+    for (const Edge& edge : it->second) {
+        if (edge.neighbour == dest)
+            return edge.isBlocked;
+    }
+    // if there is no edge , its blocked
+    return true;
 
-
+}
 
 
 
