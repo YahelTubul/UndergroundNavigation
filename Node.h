@@ -5,6 +5,7 @@
 #ifndef UNDERGROUNDNAVIGATION_NODE_H
 #define UNDERGROUNDNAVIGATION_NODE_H
 struct Node {
-
+    int id;
+    float x,y,z; //3d definition for unix
 };
 #endif //UNDERGROUNDNAVIGATION_NODE_H
