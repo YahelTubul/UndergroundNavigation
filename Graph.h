@@ -17,6 +17,7 @@ private:
 public:
         void addNode(int id, float x, float y, float z);
         void addEdge(int from, int dest, double weight);
+        bool findNode(int id);
 
 
 
