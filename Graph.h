@@ -6,10 +6,17 @@
 #define UNDERGROUNDNAVIGATION_GRAPH_H
 #include <vector>
 #include <unordered_map>
+#include "Node.h"
+#include "Edge.h"
 
 // This class represent the underground environment computationally
 class Graph {
     private:
+        std::unordered_map<int, Node> nodesList; // save all nodes in the graph
+        std::unordered_map<int, std::vector<Edge>> neighbourList; // save the neighbour of each node
+
+
+
 
 };
 #endif //UNDERGROUNDNAVIGATION_GRAPH_H
