@@ -7,4 +7,5 @@ include_directories(.)
 
 add_executable(UndergroundNavigation
         Graph.cpp
-        Graph.h)
+        Graph.h
+        Node.h)
