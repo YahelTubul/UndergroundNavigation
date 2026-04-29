@@ -21,6 +21,8 @@ public:
         std::vector<Edge> getNeighbours(int id) const;
         void block(int from, int dest);
         void unblock(int from, int dest);
+        bool isBlocked(int from, int dest) const;
+
 
 
 
