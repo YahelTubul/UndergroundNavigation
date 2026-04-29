@@ -19,6 +19,8 @@ public:
         void addEdge(int from, int dest, double weight);
         bool findNode(int id) const;
         std::vector<Edge> getNeighbours(int id) const;
+        void block(int from, int dest);
+
 
 
 
