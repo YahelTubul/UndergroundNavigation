@@ -8,3 +8,4 @@ void Graph::addNode(int id, float x, float y, float z) {
     nodesList[id] = {id, x,y,z}; // allocate values in the node
 }
 
+

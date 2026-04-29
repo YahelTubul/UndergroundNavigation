@@ -6,7 +6,7 @@
 #define UNDERGROUNDNAVIGATION_EDGE_H
 struct Edge {
     int neighbour;
-    int weight;
-    int isBlocked;
+    double weight;
+    bool isBlocked;
 };
 #endif //UNDERGROUNDNAVIGATION_EDGE_H
