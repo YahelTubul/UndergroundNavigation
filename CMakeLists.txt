@@ -9,4 +9,6 @@ add_executable(UndergroundNavigation
         Graph.cpp
         Graph.h
         Node.h
-        Edge.h)
+        Edge.h
+        PathFind.h
+        PathFind.cpp)
