@@ -42,7 +42,11 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
                 int neighbourNode = edge.neighbour;
                 double updateCost = cameFrom[currNode] + edge.weight;
                 if (!costStart.count(neighbourNode) || updateCost < costStart[neighbourNode]) {
-
+                    costStart[neighbourNode] = updateCost;
+                    // update from which node I came
+                    cameFrom[neighbourNode] = currNode;
+                    // push this node for future check
+                    pendingNodes.push({updateCost, neighbourNode});
                 }
             }
        }
