@@ -30,40 +30,41 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
     std::unordered_set<int> visited_nodes; // stores the processed nodes
     // initialize the start node
     costStart[start] = 0.0;
-    pendingNodes.push({0.0,start});
+    pendingNodes.push({herusitic(graph,start,dest),start});
     while (!pendingNodes.empty()) {
         // get the node with the low cost
         int currNode = pendingNodes.top().second;
         pendingNodes.pop();
-        //check if the current node is the destination
-        if (currNode == dest) {
-            //restore the navigation path from cameFrom map
-            std::vector<int> path;
-            int node = dest;
-            while (node != start) {
-                path.push_back(node);
-                node = cameFrom[node];
+        if (!visited_nodes.count(currNode)) {
+            visited_nodes.insert(currNode);
+            //check if the current node is the destination
+            if (currNode == dest) {
+                //restore the navigation path from cameFrom map
+                std::vector<int> path;
+                int node = dest;
+                while (node != start) {
+                    path.push_back(node);
+                    node = cameFrom[node];
+                }
+                path.push_back(start);
+                reverse(path.begin(), path.end());
+                return path;
             }
-            path.push_back(start);
-            reverse(path.begin(), path.end());
-            return path;
-        }
-        // pass on the neighbours of the current node
-       for (const Edge& edge : graph.getNeighbours(currNode)) {
-           //skip on block edges
-            if (!edge.isBlocked) {
-                // data of the neighbour node, to where I can go, and calc how much it cost
-                int neighbourNode = edge.neighbour;
-                double updateCost = costStart[currNode] + edge.weight;
-                if (!costStart.count(neighbourNode) || updateCost < costStart[neighbourNode]) {
-                    costStart[neighbourNode] = updateCost;
-                    // update from which node I came
-                    cameFrom[neighbourNode] = currNode;
-                    // push this node for future check
-                    pendingNodes.push({updateCost, neighbourNode});
+            // pass on the neighbours of the current node
+            for (const Edge& edge : graph.getNeighbours(currNode)) {
+                //skip on block edges
+                if (!edge.isBlocked && !visited_nodes.count(edge.neighbour)) {
+                    double newG = costStart[currNode] + edge.weight;
+                    if (!costStart.count(edge.neighbour) || newG < costStart[edge.neighbour]) {
+                        costStart[edge.neighbour] = newG;
+                        cameFrom[edge.neighbour] = currNode;
+                        // estimated the total cost to guide the search
+                        double f = newG + herusitic(graph, edge.neighbour, dest);
+                        pendingNodes.push({f, edge.neighbour});
+                    }
                 }
             }
-       }
+        }
     }
     return {};
 }
