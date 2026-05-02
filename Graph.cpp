@@ -70,6 +70,9 @@ bool Graph::isBlocked(int from, int dest) const {
     }
     // if there is no edge , its blocked
     return true;
+}
+
+const Node* Graph::getNode(int id) const {
 
 }
 

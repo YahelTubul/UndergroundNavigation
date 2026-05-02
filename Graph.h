@@ -22,12 +22,7 @@ public:
         void block(int from, int dest);
         void unblock(int from, int dest);
         bool isBlocked(int from, int dest) const;
-
-
-
-
-
-
+        const Node* getNode(int id) const;
 
 
 };
