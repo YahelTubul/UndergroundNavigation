@@ -34,8 +34,12 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
             path.push_back(start);
             reverse(path.begin(), path.end());
         }
+        // pass on the neighbours of the current node
        for (const Edge& edge : graph.getNeighbours(currNode)) {
+           //skip on block edges
+            if (!edge.isBlocked) {
 
+            }
        }
     }
 }
