@@ -65,7 +65,7 @@ bool Graph::isBlocked(int from, int dest) const {
         return true;
     // found the edge
     for (const Edge& edge : it->second) {
-        if (edge.neighbour == dest)
+        if (edge.neighbour == from)
             return edge.isBlocked;
     }
     // if there is no edge , its blocked

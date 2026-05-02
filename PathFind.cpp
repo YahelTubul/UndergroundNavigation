@@ -2,7 +2,7 @@
 
 #include <queue>
 #include <vector>
-
+#include <algorithm>
 #include "Graph.h"
 //
 // Created by Yahel Tubul on 30/04/2026.
@@ -33,6 +33,7 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
             }
             path.push_back(start);
             reverse(path.begin(), path.end());
+            return path;
         }
         // pass on the neighbours of the current node
        for (const Edge& edge : graph.getNeighbours(currNode)) {
@@ -40,7 +41,7 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
             if (!edge.isBlocked) {
                 // data of the neighbour node, to where I can go, and calc how much it cost
                 int neighbourNode = edge.neighbour;
-                double updateCost = cameFrom[currNode] + edge.weight;
+                double updateCost = costStart[currNode] + edge.weight;
                 if (!costStart.count(neighbourNode) || updateCost < costStart[neighbourNode]) {
                     costStart[neighbourNode] = updateCost;
                     // update from which node I came
@@ -51,4 +52,5 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
             }
        }
     }
+    return {};
 }
