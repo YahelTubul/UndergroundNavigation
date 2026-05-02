@@ -19,6 +19,8 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
     costStart[start] = 0.0;
     pendingNodes.push({0.0,start});
     while (!pendingNodes.empty()) {
-
+        // get the node with the low cost
+        int currNode = pendingNodes.top().second;
+        pendingNodes.pop();
     }
 }
