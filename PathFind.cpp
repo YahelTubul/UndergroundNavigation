@@ -38,7 +38,9 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
        for (const Edge& edge : graph.getNeighbours(currNode)) {
            //skip on block edges
             if (!edge.isBlocked) {
-
+                // data of the neighbour node, to where I can go, and calc how much it cost
+                int neighbourNode = edge.neighbour;
+                double updateCost = cameFrom[currNode] + edge.weight;
             }
        }
     }
