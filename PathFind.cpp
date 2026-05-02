@@ -15,5 +15,6 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
         > pendingNodes;
     std::unordered_map<int, double> costStart;
     std::unordered_map<int, int> cameFrom;
-
+    costStart[start] = 0.0;
+    pendingNodes.push({0.0,start});
 }
