@@ -22,5 +22,16 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
         // get the node with the low cost
         int currNode = pendingNodes.top().second;
         pendingNodes.pop();
+        //check if the current node is the destination
+        if (currNode == dest) {
+            std::vector<int> path;
+            int node = dest;
+            while (node != start) {
+                path.push_back(node);
+                node = cameFrom[node];
+            }
+            path.push_back(start);
+            reverse(path.begin(), path.end());
+        }
     }
 }
