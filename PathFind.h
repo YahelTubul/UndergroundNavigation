@@ -9,8 +9,8 @@
 
 class PathFind {
 public:
-    std::vector<int> findPath(const Graph& graph, int start, int dest);
+    static std::vector<int> findPath(const Graph& graph, int start, int dest);
 private:
-    double herusitic(const Graph& graph, int start, int dest);
+    static double herusitic(const Graph& graph, int start, int dest);
 };
 #endif //UNDERGROUNDNAVIGATION_PATHFIND_H

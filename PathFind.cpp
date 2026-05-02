@@ -7,6 +7,17 @@
 //
 // Created by Yahel Tubul on 30/04/2026.
 //
+
+double PathFind::herusitic(const Graph& graph, int from, int dest) {
+    const Node* start = graph.getNode(from);
+    const Node* destNode = graph.getNode(dest);
+    if (!start || !destNode)
+        return 0.0;
+    double dis_x = destNode->x - start->x;
+    double dis_y = destNode->y - start->y;
+    double dis_z = destNode->z - start->z;
+    return sqrt(dis_x * dis_x + dis_y * dis_y + dis_z * dis_z);
+}
 std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
     std::priority_queue<
         std::pair<double,int>,
