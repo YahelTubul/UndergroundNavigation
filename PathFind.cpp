@@ -4,10 +4,11 @@
 #include <vector>
 #include <algorithm>
 #include "Graph.h"
+#include <unordered_set>
 //
 // Created by Yahel Tubul on 30/04/2026.
 //
-
+// calc the cost from a node to the destination, based on distance between nodes
 double PathFind::herusitic(const Graph& graph, int from, int dest) {
     const Node* start = graph.getNode(from);
     const Node* destNode = graph.getNode(dest);
@@ -26,6 +27,7 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
         > pendingNodes;
     std::unordered_map<int, double> costStart;
     std::unordered_map<int, int> cameFrom;
+    std::unordered_set<int> visited_nodes; // stores the processed nodes
     // initialize the start node
     costStart[start] = 0.0;
     pendingNodes.push({0.0,start});
