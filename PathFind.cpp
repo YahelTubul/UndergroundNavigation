@@ -41,6 +41,9 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
                 // data of the neighbour node, to where I can go, and calc how much it cost
                 int neighbourNode = edge.neighbour;
                 double updateCost = cameFrom[currNode] + edge.weight;
+                if (!costStart.count(neighbourNode) || updateCost < costStart[neighbourNode]) {
+
+                }
             }
        }
     }
