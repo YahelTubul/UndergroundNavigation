@@ -24,6 +24,7 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
         pendingNodes.pop();
         //check if the current node is the destination
         if (currNode == dest) {
+            //restore the navigation path from cameFrom map
             std::vector<int> path;
             int node = dest;
             while (node != start) {
@@ -33,5 +34,8 @@ std::vector<int> PathFind::findPath(const Graph& graph, int start, int dest) {
             path.push_back(start);
             reverse(path.begin(), path.end());
         }
+       for (const Edge& edge : graph.getNeighbours(currNode)) {
+
+       }
     }
 }
