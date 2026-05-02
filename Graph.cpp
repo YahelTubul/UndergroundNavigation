@@ -8,7 +8,7 @@ void Graph::addNode(int id, float x, float y, float z) {
 }
 // add edge from to sides to node in graph
 void Graph::addEdge(int from, int dest, double weight) {
-    //add edge to the first side
+    //add edge to the first sides
     neighbourList[from].push_back({dest, weight,false});
     //add edge to the second side
     neighbourList[dest].push_back({from, weight, false});
@@ -71,9 +71,12 @@ bool Graph::isBlocked(int from, int dest) const {
     // if there is no edge , its blocked
     return true;
 }
-
+// return pointer to node
 const Node* Graph::getNode(int id) const {
-
+    auto it = nodesList.find(id);
+    if (it == nodesList.end())
+        return nullptr;
+    return &it->second;
 }
 
 
