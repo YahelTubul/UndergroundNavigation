@@ -11,4 +11,5 @@ add_executable(UndergroundNavigation
         Node.h
         Edge.h
         PathFind.h
-        PathFind.cpp)
+        PathFind.cpp
+        main.cpp)
