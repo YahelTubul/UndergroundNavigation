@@ -23,6 +23,7 @@ public:
         void unblock(int from, int dest);
         bool isBlocked(int from, int dest) const;
         const Node* getNode(int id) const;
+        const std::unordered_map<int, Node>& getNodes() const;
 
 
 };

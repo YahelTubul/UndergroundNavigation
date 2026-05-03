@@ -39,4 +39,6 @@ int LocationEstimator::update(const Graph &graph, int measuredId) {
 int LocationEstimator::getClose(const Graph &graph) {
     // save the smallest distance
     double distance = std::numeric_limits<double>::max();
+    int closeNode;
+    for (const auto& node : graph.)
 }
