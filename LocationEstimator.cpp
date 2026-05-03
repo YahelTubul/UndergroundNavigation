@@ -24,4 +24,8 @@ void LocationEstimator::initialize(const Graph &graph, int startId) {
 int LocationEstimator::update(const Graph &graph, int measuredId) {
     // extract the measure node from the graph
     const Node* measureNode = graph.getNode(measuredId);
+    // check if the node exists
+    if (measureNode == nullptr) {
+        return -1;
+    }
 }
