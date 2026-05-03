@@ -11,7 +11,9 @@ LocationEstimator::LocationEstimator(double gain) {
 }
 
 void LocationEstimator::initialize(const Graph &graph, int startId) {
+    // find the node follow the id
     const Node* startNode = graph.getNode(startId);
+    // check that get valid node id
     if (startNode != nullptr) {
         estimatX = startNode->x;
         estimatY = startNode->y;

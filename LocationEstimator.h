@@ -13,7 +13,8 @@ public:
     LocationEstimator (double gain = 0.6);
     // define the start position of the estimated location
     void initialize(const Graph& graph, int startId);
-
+    // update the user estimated location and returns the node id closest to the new location.
+    int update(const Graph& graph, int measuredId);
 
 };
 
