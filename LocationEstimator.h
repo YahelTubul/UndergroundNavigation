@@ -11,7 +11,8 @@ private:
 public:
     //constructor that define how much influence has to measure
     LocationEstimator (double gain = 0.6);
-    void initialize(const Graph& graph, int startNode);
+    // define the start position of the estimated location
+    void initialize(const Graph& graph, int startId);
 
 
 };

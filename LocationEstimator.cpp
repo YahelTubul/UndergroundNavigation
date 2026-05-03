@@ -9,3 +9,12 @@ LocationEstimator::LocationEstimator(double gain) {
     estimatY = 0;
     estimatZ = 0;
 }
+
+void LocationEstimator::initialize(const Graph &graph, int startId) {
+    const Node* startNode = graph.getNode(startId);
+    if (startNode != nullptr) {
+        estimatX = startNode->x;
+        estimatY = startNode->y;
+        estimatZ = startNode->z;
+    }
+}
