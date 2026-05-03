@@ -46,5 +46,7 @@ int LocationEstimator::getClose(const Graph &graph) {
         float dx = node.x - estimatX;
         float dy = node.y - estimatY;
         float dz = node.z - estimatZ;
+        //calculate the distance
+        double dist = dx*dx + dy*dy + dz*dz;
     }
 }
