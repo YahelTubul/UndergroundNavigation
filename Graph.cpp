@@ -78,6 +78,10 @@ const Node* Graph::getNode(int id) const {
         return nullptr;
     return &it->second;
 }
+// return the nodes in the graph
+const std::unordered_map<int, Node>& Graph::getNodes() const {
+    return nodesList;
+}
 
 
 
