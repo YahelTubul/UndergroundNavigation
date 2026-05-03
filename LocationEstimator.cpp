@@ -40,7 +40,11 @@ int LocationEstimator::getClose(const Graph &graph) {
     // save the smallest distance
     double distance = std::numeric_limits<double>::max();
     int closeNode;
-    for (const auto& node : graph.getNodes()) {
-
+    for (const auto& pair : graph.getNodes()) {
+        const Node& node = pair.second;
+        //calculate the difference in axes
+        float dx = node.x - estimatX;
+        float dy = node.y - estimatY;
+        float dz = node.z - estimatZ;
     }
 }
