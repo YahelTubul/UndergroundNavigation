@@ -32,4 +32,6 @@ int LocationEstimator::update(const Graph &graph, int measuredId) {
     estimatX = estimatX + Kal_gain * (measureNode->x - estimatX);
     estimatY = estimatY + Kal_gain * (measureNode->y - estimatY);
     estimatZ = estimatZ + Kal_gain * (measureNode->z - estimatZ);
+
+    return 0;
 }
