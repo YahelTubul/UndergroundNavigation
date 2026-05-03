@@ -16,7 +16,7 @@ public:
     // update the user estimated location and returns the node id closest to the new location.
     int update(const Graph& graph, int measuredId);
     // find and return the node id close to the current estimated coordinates
-    int getClose(const Graph& graph);
+    int getClose(const Graph& graph) const;
 
 };
 

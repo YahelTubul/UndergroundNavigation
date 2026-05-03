@@ -33,13 +33,13 @@ int LocationEstimator::update(const Graph &graph, int measuredId) {
     estimatY = estimatY + Kal_gain * (measureNode->y - estimatY);
     estimatZ = estimatZ + Kal_gain * (measureNode->z - estimatZ);
 
-    return 0;
+    return getClose(graph);
 }
 
-int LocationEstimator::getClose(const Graph &graph) {
+int LocationEstimator::getClose(const Graph &graph) const {
     // save the smallest distance
-    double distance = std::numeric_limits<double>::max();
-    int closeNode;
+    double closeDis = std::numeric_limits<double>::max();
+    int closeNode = 0;
     for (const auto& pair : graph.getNodes()) {
         const Node& node = pair.second;
         //calculate the difference in axes
@@ -48,5 +48,11 @@ int LocationEstimator::getClose(const Graph &graph) {
         float dz = node.z - estimatZ;
         //calculate the distance
         double dist = dx*dx + dy*dy + dz*dz;
+        // update the best distance
+        if (dist < closeDis) {
+            closeDis = dist;
+            closeNode = node.id;
+        }
     }
+    return closeNode;
 }
