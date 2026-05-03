@@ -12,4 +12,6 @@ add_executable(UndergroundNavigation
         Edge.h
         PathFind.h
         PathFind.cpp
-        main.cpp)
+        main.cpp
+        LocationEstimator.h
+        LocationEstimator.cpp)
