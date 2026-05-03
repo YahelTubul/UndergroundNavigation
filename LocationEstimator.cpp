@@ -28,4 +28,8 @@ int LocationEstimator::update(const Graph &graph, int measuredId) {
     if (measureNode == nullptr) {
         return -1;
     }
+    // update the estimate location follow the formula: estimated = estimated + K * (measured - estimated)
+    estimatX = estimatX + Kal_gain * (measureNode->x - estimatX);
+    estimatY = estimatY + Kal_gain * (measureNode->y - estimatY);
+    estimatZ = estimatZ + Kal_gain * (measureNode->z - estimatZ);
 }
