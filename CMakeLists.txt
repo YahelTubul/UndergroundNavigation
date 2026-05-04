@@ -14,4 +14,6 @@ add_executable(UndergroundNavigation
         PathFind.cpp
         main.cpp
         LocationEstimator.h
-        LocationEstimator.cpp)
+        LocationEstimator.cpp
+        "Controller .h"
+        Controller.cpp)
