@@ -15,6 +15,8 @@ private:
     PathFind path;
 public:
     Controller(Graph& graph);
+    void navigation(int start, int dest);
+
 
 };
 #endif //UNDERGROUNDNAVIGATION_CONTROLLER_H
