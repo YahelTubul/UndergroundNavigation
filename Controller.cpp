@@ -5,7 +5,7 @@
 #include <iostream>
 #include <ostream>
 
-#include "Controller .h"
+#include "Controller.h"
 #define KALMAN_UPDATOR 3
 
 Controller::Controller(Graph &graph) : graph(graph),location(0.6) {
