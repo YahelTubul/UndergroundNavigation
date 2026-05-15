@@ -7,5 +7,6 @@
 struct Node {
     int id;
     float x,y,z; //3d definition for unix
+    std::string name;
 };
 #endif //UNDERGROUNDNAVIGATION_NODE_H
