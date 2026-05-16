@@ -19,7 +19,13 @@ int main() {
     double gain = ConfigManager::LoadGain("../config/settings.txt");
     std::cout << "loaded gain: "<< gain << std::endl;
     Controller controller(graph, gain);
+    int startNode,destinationNode;
+    std::cout << "Enter start node: ";
+    std::cin >> startNode;
+    std::cout << "Enter destination node: ";
+    std::cin >> destinationNode;
 
+    controller.navigation(startNode, destinationNode);
 
     return 0;
 }
