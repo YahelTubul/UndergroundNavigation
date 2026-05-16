@@ -14,7 +14,7 @@ private:
     LocationEstimator location;
     PathFind path;
 public:
-    Controller(Graph& graph);
+    Controller(Graph& graph, double gain);
     void navigation(int start, int dest);
 
 

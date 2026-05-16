@@ -8,7 +8,8 @@
 #include "Controller.h"
 #define KALMAN_UPDATOR 3
 
-Controller::Controller(Graph &graph) : graph(graph),location(0.6) {
+Controller::Controller(Graph &graph, double gain)
+    : graph(graph), location(gain) {
 }
 
 void Controller::navigation(int start, int dest) {

@@ -16,4 +16,6 @@ add_executable(UndergroundNavigation
         LocationEstimator.h
         LocationEstimator.cpp
         Controller.h
-        Controller.cpp)
+        Controller.cpp
+        ConfigManager.h
+        ConfigManager.cpp)

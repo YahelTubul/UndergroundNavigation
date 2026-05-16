@@ -10,7 +10,7 @@ private:
     float estimatX = 0, estimatY = 0, estimatZ = 0, Kal_gain = 0;
 public:
     //constructor that define how much influence has to measure
-    LocationEstimator (double gain = 0.6);
+    LocationEstimator(double gain);
     // define the start position of the estimated location
     void initialize(const Graph& graph, int startId);
     // update the user estimated location and returns the node id closest to the new location.

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Graph.h"
+#include "ConfigManager.h"
 #include "Controller.h"
+
 
 int main() {
     Graph graph;
@@ -33,13 +35,13 @@ int main() {
 
     graph.addEdge(7, 8, 1);
     graph.addEdge(8, 9, 2);
+    // blocks
 
-    // חסימות לדוגמה
     graph.block(2, 3);
     graph.block(5, 6);
+    double gain = ConfigManager::LoadGain("../config/settings.txt");
 
-    Controller controller(graph);
-
+    Controller controller(graph, gain);
     int startNode = 1;
     int destinationNode = 9;
 
