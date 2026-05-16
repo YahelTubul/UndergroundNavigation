@@ -19,4 +19,5 @@ add_executable(UndergroundNavigation
         Controller.cpp
         ConfigManager.h
         ConfigManager.cpp
-        GraphLoader.h)
+        GraphLoader.h
+        GraphLoader.cpp)
