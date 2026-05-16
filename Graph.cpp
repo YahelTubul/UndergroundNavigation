@@ -3,8 +3,8 @@
 //
 #include "Graph.h"
 // add node in graph
-void Graph::addNode(int id, float x, float y, float z) {
-    nodesList[id] = {id, x,y,z}; // allocate values in the node
+void Graph::addNode(int id,std::string name, float x, float y, float z) {
+    nodesList[id] = {id,name, x,y,z}; // allocate values in the node
 }
 // add edge from to sides to node in graph
 void Graph::addEdge(int from, int dest, double weight) {

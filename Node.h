@@ -6,7 +6,7 @@
 #define UNDERGROUNDNAVIGATION_NODE_H
 struct Node {
     int id;
-    float x,y,z; //3d definition for unix
     std::string name;
+    float x,y,z; //3d definition for unix
 };
 #endif //UNDERGROUNDNAVIGATION_NODE_H
